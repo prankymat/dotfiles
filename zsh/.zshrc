@@ -19,5 +19,20 @@ source $ZSH/oh-my-zsh.sh
 # 256 tmux
 alias tmux="TERM=xterm-256color tmux"
 
-# Local zshrc edit
-alias zshrc-local-edit="vi $HOME/.config/zsh/zshrc.local.sh"
+# Edit local zshrc
+alias zshrc-local-edit="vi $HOME/.dotfiles/zsh/zshrc.local.sh" 
+
+
+# Source zshrc
+function resource {
+	if [[ $1 ]]; then
+		source $1
+		echo "Sourced $1"
+	else
+		source ~/.zshrc
+		echo "Sourced ~/.zshrc"
+	fi
+}
+
+# Edit vimrc
+alias vimrc="vi ~/.vimrc"
